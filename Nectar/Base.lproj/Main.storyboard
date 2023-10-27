@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="22155" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="hYC-u6-JJk">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="22155" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
     <device id="retina6_72" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22131"/>
@@ -10,7 +10,7 @@
         <!--WelcomVC-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="WelcomVC" customModule="Nectar" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="WelcomVC" id="BYZ-38-t0r" customClass="WelcomVC" customModule="Nectar" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="430" height="932"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -52,6 +52,9 @@
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="string" keyPath="cornerRadius" value="19"/>
                                 </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="getStartedAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="ezR-Dc-ZSd"/>
+                                </connections>
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
@@ -88,10 +91,10 @@
             </objects>
             <point key="canvasLocation" x="46.046511627906973" y="-2.5751072961373391"/>
         </scene>
-        <!--View Controller-->
+        <!--LoginVC-->
         <scene sceneID="NpP-11-DoH">
             <objects>
-                <viewController id="xJ5-Ix-f9s" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="LoginVC" modalTransitionStyle="crossDissolve" modalPresentationStyle="fullScreen" id="xJ5-Ix-f9s" customClass="LoginVC" customModule="Nectar" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="gVL-a3-QLe">
                         <rect key="frame" x="0.0" y="0.0" width="430" height="932"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -158,12 +161,18 @@
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="string" keyPath="cornerRadius" value="19"/>
                                 </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="logInAction:" destination="xJ5-Ix-f9s" eventType="touchUpInside" id="VmH-t1-7tx"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ImH-oJ-npc">
                                 <rect key="frame" x="327.33333333333331" y="554" width="57.666666666666686" height="34.333333333333371"/>
                                 <color key="tintColor" red="0.48627450980392156" green="0.48627450980392156" blue="0.48627450980392156" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain" image="eye.slash" catalog="system"/>
+                                <buttonConfiguration key="configuration" style="plain" image="eyes" catalog="system"/>
+                                <connections>
+                                    <action selector="seenPasswordAction:" destination="xJ5-Ix-f9s" eventType="touchUpInside" id="yxu-34-7Jn"/>
+                                </connections>
                             </button>
                             <button opaque="NO" alpha="0.75" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="y2F-vz-nw6">
                                 <rect key="frame" x="252.66666666666663" y="612" width="142.33333333333337" height="31"/>
@@ -189,6 +198,9 @@
                                         <buttonConfiguration key="configuration" style="plain" title="Singup">
                                             <fontDescription key="titleFontDescription" type="system" pointSize="14"/>
                                         </buttonConfiguration>
+                                        <connections>
+                                            <action selector="signUpAction:" destination="xJ5-Ix-f9s" eventType="touchUpInside" id="3j3-DL-6SB"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                             </stackView>
@@ -254,15 +266,20 @@
                             <constraint firstItem="xXy-wx-PTl" firstAttribute="top" secondItem="ckz-uo-Sbx" secondAttribute="bottom" constant="9.3300000000000001" id="zNk-6D-9k3"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="emailTextField" destination="xXy-wx-PTl" id="GFL-hW-mw3"/>
+                        <outlet property="passwordTextField" destination="DFQ-F9-ncu" id="LIr-fQ-ENz"/>
+                        <outlet property="seenPassword" destination="ImH-oJ-npc" id="og7-aN-WBx"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="WTm-nx-Q4X" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="856.74418604651157" y="-3.218884120171674"/>
         </scene>
-        <!--View Controller-->
+        <!--Sign UpVC-->
         <scene sceneID="b2R-gA-rbb">
             <objects>
-                <viewController id="hYC-u6-JJk" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="SignUpVC" modalTransitionStyle="crossDissolve" modalPresentationStyle="fullScreen" id="hYC-u6-JJk" customClass="SignUpVC" customModule="Nectar" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="JZf-CY-c9D">
                         <rect key="frame" x="0.0" y="0.0" width="430" height="932"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -336,6 +353,9 @@
                                         <buttonConfiguration key="configuration" style="plain" title="Login">
                                             <fontDescription key="titleFontDescription" type="system" pointSize="14"/>
                                         </buttonConfiguration>
+                                        <connections>
+                                            <action selector="logInAction:" destination="hYC-u6-JJk" eventType="touchUpInside" id="0q2-ny-gRW"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                             </stackView>
@@ -344,10 +364,13 @@
                                 <color key="backgroundColor" red="0.32549019610000002" green="0.69411764710000001" blue="0.45882352939999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain" title="Log in"/>
+                                <buttonConfiguration key="configuration" style="plain" title="Sign Up"/>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="string" keyPath="cornerRadius" value="19"/>
                                 </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="signUpAction:" destination="hYC-u6-JJk" eventType="touchUpInside" id="vOK-9O-KMz"/>
+                                </connections>
                             </button>
                             <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="vbb-g2-UOI">
                                 <rect key="frame" x="28.666666666666657" y="658" width="373" height="34"/>
@@ -370,7 +393,10 @@
                                 <rect key="frame" x="328" y="659" width="57.666666666666686" height="34.333333333333371"/>
                                 <color key="tintColor" red="0.48627450979999998" green="0.48627450979999998" blue="0.48627450979999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain" image="eye.slash" catalog="system"/>
+                                <buttonConfiguration key="configuration" style="plain" image="eyes" catalog="system"/>
+                                <connections>
+                                    <action selector="seenPasswordAction:" destination="hYC-u6-JJk" eventType="touchUpInside" id="G8Z-03-puG"/>
+                                </connections>
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="7ZA-Dy-kha"/>
@@ -442,6 +468,12 @@
                             <constraint firstItem="Rgr-to-REH" firstAttribute="width" secondItem="JZf-CY-c9D" secondAttribute="width" multiplier="0.867442" id="xE7-kT-0Zj"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="emailTextField" destination="IKJ-N4-sFO" id="Qxu-KI-FFv"/>
+                        <outlet property="passwordTextField" destination="vbb-g2-UOI" id="uQy-Zl-lre"/>
+                        <outlet property="seenPassword" destination="YZT-sm-U8s" id="13h-td-VM8"/>
+                        <outlet property="userNameTextField" destination="Rgr-to-REH" id="h3F-dI-SiX"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ahK-PE-ZPh" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -450,7 +482,7 @@
     </scenes>
     <resources>
         <image name="Rabit" width="56" height="65"/>
-        <image name="eye.slash" catalog="system" width="128" height="95"/>
+        <image name="eyes" catalog="system" width="128" height="99"/>
         <image name="loginBack" width="414" height="897"/>
         <image name="redRabit" width="49" height="57"/>
         <image name="welcomeImage" width="415" height="897"/>
